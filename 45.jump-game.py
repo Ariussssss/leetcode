@@ -66,6 +66,4 @@ class TestConvert(unittest.TestCase):
         self.assertEqual(func([2,3,1,1,4]), 2)
         self.assertEqual(func([2,3,0,1,4]), 2)
         self.assertEqual(func([0]), 0)
-
-if __name__ == "__main__":
-    unittest.main()
+ 

@@ -1,14 +1,6 @@
-""""
+"""
 70. Climbing Stairs
-Easy
 
-3447
-
-112
-
-Add to List
-
-Share
 You are climbing a stair case. It takes n steps to reach to the top.
 
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
@@ -30,23 +22,23 @@ Explanation: There are three ways to climb to the top.
 1. 1 step + 1 step + 1 step
 2. 1 step + 2 steps
 3. 2 steps + 1 step
+
+
 """
 
 import unittest
 
 class Solution:
-    def climbStairs(self, n: int) -> int:
-        if n == 1:
-            return 1
-        return 2 * sekf.climbStair(n - 1)
+    def climbingStairs()->int:
     
-class climbStairsCase(unittest.TestCase):
-    def test_climb_stairs(self):
+class ClimbingStairsCase(unittest.TestCase):
+    def test_climbing_stairs(self):
         s = Solution()
-        for i, o in [(3, 3), (2, 2)]:
-            self.assertEqual(s.climbStairs(i), o)
+        for i, o in []:
+            self.assertEqual(s.climbingStairs(i), o)
 
 
 if __name__ == '__main__':
     s = Solution()
     unittest.main()
+

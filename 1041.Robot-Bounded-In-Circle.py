@@ -1,10 +1,8 @@
 """
 1041. Robot Bounded In Circle
-User Accepted:1620
-User Tried:2130
-Total Accepted:1665
-Total Submissions:5152
+
 Difficulty:Medium
+
 On an infinite plane, a robot initially stands at (0, 0) and faces north.  The robot can receive one of three instructions:
 
 "G": go straight 1 unit;
@@ -49,13 +47,26 @@ instructions[i] is in {'G', 'L', 'R'}
 import unittest
 
 class Solution:
-    def robot_bounded_in_circle()->int:
+    def isRobotBounded(self, instructions: str) -> bool:
+        if "G" not in instructions:
+            return True
+        sum_rotate = 0
+        for i in instructions:
+            if i == "L":
+                sum_rotate += 90
+            elif i == "R":
+                sum_rotate -= 90
+        return sum_rotate % 360 != 0
     
 class RobotBoundedInCircleCase(unittest.TestCase):
     def test_robot_bounded_in_circle(self):
         s = Solution()
-        for i, o in []:
-            self.assertEqual(s.robot_bounded_in_circle(i), o)
+        for i, o in [("GLRLLGLL", True),
+                     ("GLGLGGLGL", False),
+                     ("GGLLGG", True),
+                     ("GG", False),
+                ("GL", True)]:
+            self.assertEqual(s.isRobotBounded(i), o)
 
 
 if __name__ == '__main__':

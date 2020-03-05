@@ -22,15 +22,28 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 """
 
 import unittest
+from typing import List
+
+# 斐波那契数列（Fibonacci sequence）
 
 class Solution:
-    def house_robber()->int:
-    
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) > 1:
+            sum_list = [nums[0], max(nums[0], nums[1])]
+            for i in range(2, len(nums)):
+                sum_list.append(max(sum_list[i-1], nums[i] + sum_list[i-2]))
+            return sum_list.pop()
+        return sum(nums)
+        
 class HouseRobberCase(unittest.TestCase):
     def test_house_robber(self):
         s = Solution()
-        for i, o in []:
-            self.assertEqual(s.house_robber(i), o)
+        for i, o in [
+                # ([183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211], None),
+                ([1,100,3, 1, 100], 200),
+                ([1,2,3, 1], 4),
+                ([2, 7, 9, 3, 1], 12)]:
+            self.assertEqual(s.rob(i), o)
 
 
 if __name__ == '__main__':

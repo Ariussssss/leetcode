@@ -1,8 +1,8 @@
 .DS_Store
 __pycache__
 leco_db.json
-leco/
-!leco/__main__.py
+/leco/*
+!/leco/__main__.py
 
 # Emacs
 *~

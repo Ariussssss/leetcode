@@ -2,24 +2,24 @@
 143.Reorder List
 
 Difficulty: Medium
-Given a singly linked list L: L0&rarr;L1&rarr;&hellip;&rarr;Ln-1&rarr;Ln,
-reorder it to: L0&rarr;Ln&rarr;L1&rarr;Ln-1&rarr;L2&rarr;Ln-2&rarr;&hellip;
+Given a singly linked list L: L0→L1→…→Ln-1→Ln,
+reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 
 You may not modify the values in the list&#39;s nodes, only nodes itself may be changed.
 
 Example 1:
 
 
-Given 1-&gt;2-&gt;3-&gt;4, reorder it to 1-&gt;4-&gt;2-&gt;3.
+Given 1→2→3→4, reorder it to 1→4→2→3.
 
 Example 2:
 
 
-Given 1-&gt;2-&gt;3-&gt;4-&gt;5, reorder it to 1-&gt;5-&gt;2-&gt;4-&gt;3.
+Given 1→2→3→4→5, reorder it to 1→5→2→4→3.
 
 
 
-Link: https://leetcode.com/problems/143/
+Link: https://leetcode.com/problems/reorder-list/
 """
 
 # Definition for singly-linked list.
@@ -40,10 +40,10 @@ class Solution:
 import unittest
         
 class SolutionCase(unittest.TestCase):
-    def test_solution(self):
+    def test_reorder_list(self):
         s = Solution()
         for i, o in []:
-            self.assertEqual(s.solution(i), o)
+            self.assertEqual(s.reorderList(i), o)
 
 
 if __name__ == '__main__':

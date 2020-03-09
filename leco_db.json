@@ -9609,5 +9609,33 @@
         "question__title":"Maximum Sum BST in Binary Tree",
         "question__title_slug":"maximum-sum-bst-in-binary-tree",
         "question_id":1475
+    },
+    {
+        "difficulty":"Easy",
+        "frontend_question_id":1374,
+        "question__title":"Generate a String With Characters That Have Odd Counts",
+        "question__title_slug":"generate-a-string-with-characters-that-have-odd-counts",
+        "question_id":1490
+    },
+    {
+        "difficulty":"Medium",
+        "frontend_question_id":1375,
+        "question__title":"Bulb Switcher III",
+        "question__title_slug":"bulb-switcher-iii",
+        "question_id":1491
+    },
+    {
+        "difficulty":"Medium",
+        "frontend_question_id":1376,
+        "question__title":"Time Needed to Inform All Employees",
+        "question__title_slug":"time-needed-to-inform-all-employees",
+        "question_id":1492
+    },
+    {
+        "difficulty":"Hard",
+        "frontend_question_id":1377,
+        "question__title":"Frog Position After T Seconds",
+        "question__title_slug":"frog-position-after-t-seconds",
+        "question_id":1493
     }
 ]

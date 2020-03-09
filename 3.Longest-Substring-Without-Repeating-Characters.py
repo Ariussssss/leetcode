@@ -55,7 +55,7 @@ class Solution:
             ans = max(ans, cur - first)
         return ans
     
-class ThreeSumCase(unittest.TestCase):
+class lengthOfLongestSubstringCase(unittest.TestCase):
     def test_three_sum(self):
         s = Solution()
         for i, o in [("abcabcbb", 3), ("bbbbb", 1), ("pwwkew", 3), (" ", 1), ("aab", 2), ("tmmzuxt", 5), ("abcabcbb", 3)]:

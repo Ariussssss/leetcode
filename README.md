@@ -1,6 +1,6 @@
 # Leetcode Solutions
 
-With a python3 crawler to fetch question from leetcode api.
+With a python3 crawler to fetch questions from leetcode api.
 
 ## Usage
 

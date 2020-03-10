@@ -22,6 +22,9 @@ Given 1→2→3→4→5, reorder it to 1→5→2→4→3.
 Link: https://leetcode.com/problems/reorder-list/
 """
 
+from typing import List
+import unittest
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -36,9 +39,6 @@ class Solution:
         
 
 
-
-import unittest
-        
 class SolutionCase(unittest.TestCase):
     def test_reorder_list(self):
         s = Solution()

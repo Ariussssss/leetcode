@@ -50,10 +50,13 @@ def get_short_name(frontend_question_id):
     if not frontend_question_id:
         return
     data = []
-    with open('./leco_db.json', 'rt') as f:
-        data = json.loads(f.read())
-        if not data:
-            data = get_all_question()
+    if not os.path.isfile('./leco_db.json'):
+        data = get_all_question()
+    else:
+        with open('./leco_db.json', 'rt') as f:
+            data = json.loads(f.read())
+            if not data:
+                data = get_all_question()
     if data:
         quest = data[frontend_question_id - 1]
         if quest["frontend_question_id"] == frontend_question_id:
@@ -62,6 +65,7 @@ def get_short_name(frontend_question_id):
                 raise Exception("🙊 File existed!")
             return quest["question__title_slug"], file_name
     raise Exception("🙈 No data found")
+
 def get_quest_data(question__title_slug):
     query = """
 query questionData($titleSlug: String!) {
@@ -96,7 +100,7 @@ def fmt(quest, file_name):
     title = ".".join([quest["questionFrontendId"], quest["title"]])
     res = "\"\"\"\n" + title + "\n\n"
     res += "Difficulty: " + quest["difficulty"] + "\n"
-    content = re.sub(r'<.+?>', '', quest["content"])
+    content = re.sub(r'(<.+?>|\r)', '', quest["content"])
     content = re.sub(r'(\-\&gt\;|\&rarr\;)', "→",
                      content).replace("&hellip;", "…")
     link = "https://leetcode.com/problems/" + quest["titleSlug"] + "/"
@@ -106,20 +110,15 @@ def fmt(quest, file_name):
     for code in quest["codeSnippets"]:
         if code["langSlug"] == "python3":
             # re def reorderList(
-            m = re.search('def(\w+)\(', code["code"])
-            solution_name = re.search(
+            solution_name = re.findall(
                 'def\s+(.+)\(',
-                "def reorderList(self, head: ListNode) -> None:").group(1)
+                code["code"])[-1]
             solution_name_slug = re.sub(r'(?<!^)(?=[A-Z])', '_',
                                         solution_name).lower()
-            res += "\n\nfrom typing import List\n\n" + code["code"] + "\n\n"
+            res += "\n\nfrom typing import List\nimport unittest\n\n" + code["code"] + "\n\n"
             break
 
     test = """
-
-import unittest
-        
-
 class SolutionCase(unittest.TestCase):
     def test_%s(self):
         s = Solution()

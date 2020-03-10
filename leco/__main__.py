@@ -1,4 +1,3 @@
-# Copyright 20 Google Inc. All Rights Reserved.
 # -*- coding: utf-8 -*-
 #
 # @Author: Arius
@@ -22,7 +21,6 @@ def get_all_question():
     print("⚓️ Start fetching~")
     request = requests.get('https://leetcode.com/api/problems/all/')
     if request.status_code == 200:
-
         def fmt(item):
             return {
                 "question_id": item["stat"]["question_id"],
@@ -30,7 +28,6 @@ def get_all_question():
                 "question__title": item["stat"]["question__title"],
                 "question__title_slug": item["stat"]["question__title_slug"]
             }
-
         def cmp(x, y):
             return 0 if x["frontend_question_id"] > y[
                     "frontend_question_id"] else -1
@@ -65,7 +62,6 @@ def get_short_name(frontend_question_id):
                 raise Exception("🙊 File existed!")
             return quest["question__title_slug"], file_name
     raise Exception("🙈 No data found")
-
 def get_quest_data(question__title_slug):
     query = """
 query questionData($titleSlug: String!) {
@@ -122,6 +118,7 @@ def fmt(quest, file_name):
     test = """
 
 import unittest
+        
 
 class SolutionCase(unittest.TestCase):
     def test_%s(self):

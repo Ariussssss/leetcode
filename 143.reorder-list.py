@@ -56,7 +56,7 @@ class Solution:
 
     # 88 ms	22.1 MB
     # 90% 7%
-    def reorderList(self, head: ListNode) -> None:
+    def reorderList1(self, head: ListNode) -> None:
         """
         Do not return anything, modify head in-place instead.
         """
@@ -77,6 +77,30 @@ class Solution:
         
         # Fixme
         # half interation
+
+    # 108 ms	35.5 MB
+    # 18% 7%
+    def reorderList(self, head: ListNode) -> None:
+        cur = head
+        tmp = []
+        while cur:
+            tmp.append(cur)
+            cur = cur.next
+        length = len(tmp)
+        if length < 2:
+            return
+        def sub(node: ListNode, idx) -> None:
+            if idx >= length // 2:
+                node.next = None
+            else:
+                next_node = node.next
+                node.next, tmp[length - 1 - idx].next = tmp[length - 1 - idx], next_node
+                sub(next_node, idx + 1)
+        sub(tmp[0], 0)
+
+# Comment:
+# Expected to be fast with more memory used.
+# But while slower?
 
 
 class SolutionCase(unittest.TestCase):

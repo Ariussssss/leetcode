@@ -29,14 +29,17 @@ import unittest
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        
+        left, right = 0, len(nums) - 1
 
 
 class SolutionCase(unittest.TestCase):
     def test_search_range(self):
         s = Solution()
-        for i, o in []:
-            self.assertEqual(s.searchRange(i), o)
+        for i, o in [
+                ([[5,7,7,8,8,10], 8], [3,4])
+                ([[5,7,7,8,8,10], 6], [-1,-1])
+        ]:
+            self.assertEqual(s.searchRange(*i), o)
 
 
 if __name__ == '__main__':

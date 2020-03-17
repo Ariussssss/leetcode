@@ -33,14 +33,30 @@ from typing import List
 import unittest
 
 class Solution:
+    # 64 ms	13.9 MB
+    # 62% 86%
     def maxProfit(self, prices: List[int]) -> int:
-        
+        if len(prices) < 1:
+            return 0
+        [min_int, *_] = prices
+        max_profit = 0
+        for i in prices:
+            if i < min_int:
+                min_int = i
+            else:
+                max_profit = max(i - min_int, max_profit)
+        return max_profit
+
 
 
 class SolutionCase(unittest.TestCase):
     def test_max_profit(self):
         s = Solution()
-        for i, o in []:
+        for i, o in [
+                ([], 0),
+                ([7, 1, 5, 3, 6, 4], 5),
+                ([7, 6, 4, 3, 1], 0)
+        ]:
             self.assertEqual(s.maxProfit(i), o)
 
 

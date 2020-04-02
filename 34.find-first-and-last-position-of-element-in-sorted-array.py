@@ -30,6 +30,21 @@ import unittest
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         left, right = 0, len(nums) - 1
+        flag = False
+        while left < right and not flag:
+            mid = (right + left) // 2
+            if nums[mid] > target:
+                right = mid
+            elif nums[mid] < target:
+                left = mid
+            else:
+                flag = True
+                left = right = mid
+        if not flag:
+            return [-1, -1]
+        left_end  = right_end = mid
+        
+                
 
 
 class SolutionCase(unittest.TestCase):

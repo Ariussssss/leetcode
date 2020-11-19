@@ -22,9 +22,13 @@ def copy2clip(txt):
 
 
 def create_file_name(quest):
-    return ".".join([
-        str(quest["frontend_question_id"]), quest["question__title_slug"], "py"
-    ])
+    return ".".join(
+        [
+            str(quest["frontend_question_id"]),
+            quest["question__title_slug"],
+            "py",
+        ]
+    )
 
 
 def get_all_question():
@@ -40,15 +44,17 @@ def get_all_question():
             }
 
         def cmp(x, y):
-            return 0 if x["frontend_question_id"] > y[
-                "frontend_question_id"] else -1
+            return (
+                0
+                if x["frontend_question_id"] > y["frontend_question_id"]
+                else -1
+            )
 
         res = [fmt(i) for i in request.json()["stat_status_pairs"]]
         res.sort(key=cmp_to_key(cmp))
-        res_str = json.dumps(res,
-                             sort_keys=True,
-                             indent=4,
-                             separators=(",", ":"))
+        res_str = json.dumps(
+            res, sort_keys=True, indent=4, separators=(",", ":")
+        )
         with open("./leco_db.json", "wt") as f:
             f.write(res_str)
             print("🎉 Update all leetcode~")
@@ -98,9 +104,7 @@ query questionData($titleSlug: String!) {
         "https://leetcode.com/graphql",
         json={
             "query": query,
-            "variables": {
-                "titleSlug": question__title_slug
-            }
+            "variables": {"titleSlug": question__title_slug},
         },
     )
     if request.status_code == 200:
@@ -113,8 +117,9 @@ def fmt(quest, file_name):
     res = '"""\n' + title + "\n\n"
     res += "Difficulty: " + quest["difficulty"] + "\n"
     content = re.sub(r"(<.+?>|\r)", "", quest["content"])
-    content = re.sub(r"(\-\&gt\;|\&rarr\;)", "→",
-                     content).replace("&hellip;", "…")
+    content = re.sub(r"(\-\&gt\;|\&rarr\;)", "→", content).replace(
+        "&hellip;", "…"
+    )
     link = "https://leetcode.com/problems/" + quest["titleSlug"] + "/"
     res += content + "\n\nLink: " + link + '\n"""'
     solution_name = "solution"
@@ -123,10 +128,14 @@ def fmt(quest, file_name):
         if code["langSlug"] == "python3":
             # re def reorderList(
             solution_name = re.findall("def\\s+(.+)\\(", code["code"])[-1]
-            solution_name_slug = re.sub(r"(?<!^)(?=[A-Z])", "_",
-                                        solution_name).lower()
-            res += ("\n\nfrom typing import List\nimport unittest\n\n" +
-                    code["code"] + "\n\n")
+            solution_name_slug = re.sub(
+                r"(?<!^)(?=[A-Z])", "_", solution_name
+            ).lower()
+            res += (
+                "\n\nfrom typing import List\nimport unittest\n\n"
+                + code["code"]
+                + "\n\n"
+            )
             break
 
     test = """
@@ -154,25 +163,32 @@ if __name__ == '__main__':
 class Commander:
     def __init__(self):
         self.parser = argparse.ArgumentParser(
-            description="Let's go leetcoding~ ")
-        self.parser.add_argument("update",
-                                 nargs="?",
-                                 help="Update local leedcode data.")
-        self.parser.add_argument("-o",
-                                 "--open",
-                                 dest="oid",
-                                 type=int,
-                                 help="Location quest website by ID.")
-        self.parser.add_argument("-s",
-                                 "--solution",
-                                 dest="sid",
-                                 type=int,
-                                 help="Location quest solution website by ID.")
-        self.parser.add_argument("-q",
-                                 "--quest",
-                                 dest="qid",
-                                 type=int,
-                                 help="Get leetcode by problem ID.")
+            description="Let's go leetcoding~ "
+        )
+        self.parser.add_argument(
+            "update", nargs="?", help="Update local leedcode data."
+        )
+        self.parser.add_argument(
+            "-o",
+            "--open",
+            dest="oid",
+            type=int,
+            help="Location quest website by ID.",
+        )
+        self.parser.add_argument(
+            "-s",
+            "--solution",
+            dest="sid",
+            type=int,
+            help="Location quest solution website by ID.",
+        )
+        self.parser.add_argument(
+            "-q",
+            "--quest",
+            dest="qid",
+            type=int,
+            help="Get leetcode by problem ID.",
+        )
 
     def get_quest(self, qid):
         print("⚓️ Start fetching~")
@@ -185,7 +201,8 @@ class Commander:
         print(
             "🎉 Download %s successed and file name in clipboard, \
             go leetcoding~"
-            % (file_name))
+            % (file_name)
+        )
 
     def open_link(self, oid):
         name, _ = get_short_name(oid)
@@ -195,8 +212,10 @@ class Commander:
     def open_solution_link(self, oid):
         name, _ = get_short_name(oid)
         webbrowser.open(
-            "https://leetcode.com/problems/%s/discuss/?currentPage=1&orderBy=hot&query=&tag=python"
-            % (name))
+            "https://leetcode.com/problems/%s/discuss/?currentPage=1&orderBy=hot\
+            &query=&tag=python"
+            % (name)
+        )
         print("🐽️ Quest solution for noobs!")
 
     def update(self):

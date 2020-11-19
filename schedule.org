@@ -1,0 +1,30 @@
+* Schedule [82%]
+  - [X] 1.two-sum.py
+  - [X] 1005.Maximize-Sum-Of-Array-After-K-Negations.py
+  - [X] 1017.Convert-to-Base--2.py
+  - [X] 1019.Next-Greater-Node-In-Linked-List.py
+  - [X] 102.binary-tree-level-order-traversal.py
+  - [X] 1020.Number-of-Enclaves.py
+  - [X] 1020.Partition-Array-Into-Three-Parts-With-Equal-Sum.py
+  - [X] 1022.Smallest-Integer-Divisible-by-K.py
+  - [X] 103.binary-tree-zigzag-level-order-traversal.py
+  - [ ] 1041.Robot-Bounded-In-Circle.py
+  - [X] 121.best-time-to-buy-and-sell-stock.py
+  - [X] 143.reorder-list.py
+  - [X] 179.Largest-Number.py
+  - [X] 189.rotate-array.py
+  - [X] 198.House-Robber.py
+  - [X] 24.Swap-Nodes-in-Pairs.py
+  - [X] 3.Longest-Substring-Without-Repeating-Characters.py
+  - [X] 300.longest-increasing-subsequence.py
+  - [X] 33.search-in-rotated-sorted-array.py
+  - [ ] 34.find-first-and-last-position-of-element-in-sorted-array.py
+  - [ ] 4.median-of-two-sorted-arrays.py
+  - [X] 45.jump-game.py
+  - [X] 53.maximum-subarray.py
+  - [X] 560.Subarray-Sum-Equals-K.py
+  - [ ] 61.Rotate-List.py
+  - [X] 70.Climbing-Stairs.py
+  - [X] 765.Couples-Holding-Hands.py
+  - [ ] 82.remove-duplicates-from-sorted-list-ii.py
+  - [X] 862.Shortest-Subarray-with-Sum-at-Least-K.py

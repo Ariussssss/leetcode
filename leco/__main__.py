@@ -12,6 +12,7 @@ from functools import cmp_to_key
 import os.path
 import webbrowser
 import subprocess
+import random
 
 base_path = "./leco-source/"
 
@@ -166,6 +167,9 @@ class Commander:
             description="Let's go leetcoding~ "
         )
         self.parser.add_argument(
+            "random", nargs="?", help="Random quest."
+        )
+        self.parser.add_argument(
             "update", nargs="?", help="Update local leedcode data."
         )
         self.parser.add_argument(
@@ -222,6 +226,17 @@ class Commander:
         print("⚓️ Start fetching~")
         get_all_question()
 
+    def random(self):
+        print("🐙 Random quest fetching~")
+        done = False
+        qid = random.randint(1, 1803)
+        while not done:
+            try:
+                self.get_quest(qid)
+                done = True
+            except:
+                qid = random.randint(1, 1803)
+
     def run(self):
         args = self.parser.parse_args()
         if args.qid:
@@ -232,6 +247,8 @@ class Commander:
             self.open_solution_link(args.sid)
         elif args.update == "update":
             self.update()
+        elif args.random:
+            self.random()
         else:
             print(args)
             print("🙈 Command refuse sir!")

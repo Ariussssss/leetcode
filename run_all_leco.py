@@ -34,16 +34,9 @@ def line(name, difficulty, code):
 def main():
     f = []
     for (dirpath, dirnames, filenames) in walk("./leco-source"):
-        f.extend(x for x in filenames if re.match(r"^\d", x))
+        f.extend(x for x in filenames if re.match(r"^\d.*\.py$", x))
 
     f.sort(key=lambda x: int(re.match(r"^(\d*).", x).group(1)))
-
-    try:
-        from subprocess import DEVNULL  # py3k
-    except ImportError:
-        import os
-
-        DEVNULL = open(os.devnull, "wb")
 
     outputStr = ""
     counter = 0

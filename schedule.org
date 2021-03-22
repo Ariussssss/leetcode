@@ -1,5 +1,5 @@
 #+STARTUP: showall
-* 🌟 Schedule [72%] 
+* 🌟 Schedule [70%] 
   - [X]  unknown 1.two-sum.py
   - [X]  unknown 3.Longest-Substring-Without-Repeating-Characters.py
   - [ ]     Hard 4.median-of-two-sorted-arrays.py
@@ -7,6 +7,7 @@
   - [X]   Medium 33.search-in-rotated-sorted-array.py
   - [ ]   Medium 34.find-first-and-last-position-of-element-in-sorted-array.py
   - [X]  unknown 45.jump-game.py
+  - [ ]     Hard 51.n-queens.py
   - [X]     Easy 53.maximum-subarray.py
   - [ ]  unknown 61.Rotate-List.py
   - [ ]  unknown 70.Climbing-Stairs.py
@@ -31,8 +32,8 @@
   - [ ]  unknown 1041.Robot-Bounded-In-Circle.py 
 
 * 🪐 Total
-  -      All Total:   29 Done:   21
+  -      All Total:   30 Done:   21
   -  unknown Total:   15 Done:   12
-  -     Hard Total:    1 Done:    0
+  -     Hard Total:    2 Done:    0
   -   Medium Total:   10 Done:    6
   -     Easy Total:    3 Done:    3

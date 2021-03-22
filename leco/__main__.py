@@ -8,6 +8,7 @@ import requests
 import json
 import argparse
 import re
+import html
 from functools import cmp_to_key
 import os.path
 import webbrowser
@@ -118,6 +119,7 @@ def fmt(quest, file_name):
     res = '"""\n' + title + "\n\n"
     res += "Difficulty: " + quest["difficulty"] + "\n"
     content = re.sub(r"(<.+?>|\r)", "", quest["content"])
+    content = html.unescape(content)
     content = re.sub(r"(\-\&gt\;|\&rarr\;)", "→", content).replace(
         "&hellip;", "…"
     )
@@ -164,7 +166,7 @@ if __name__ == '__main__':
 class Commander:
     def __init__(self):
         self.parser = argparse.ArgumentParser(
-            description="Let's go leetcoding~ "
+            description="🤩 Let's go leetcoding~ "
         )
         self.parser.add_argument(
             "random", nargs="?", help="Random quest."
@@ -203,8 +205,7 @@ class Commander:
         fmt(get_quest_data(name), output_source)
         # copy2clip(output_source)
         print(
-            "🎉 Download %s successed and file name in clipboard, \
-            go leetcoding~"
+            "🎉 Download %s successed, go leetcoding~"
             % (file_name)
         )
 
@@ -234,7 +235,7 @@ class Commander:
             try:
                 self.get_quest(qid)
                 done = True
-            except:
+            except Exception("🙊 File existed!"):
                 qid = random.randint(1, 1803)
 
     def run(self):
@@ -250,8 +251,6 @@ class Commander:
         elif args.random:
             self.random()
         else:
-            print(args)
-            print("🙈 Command refuse sir!")
             self.parser.print_help()
 
 

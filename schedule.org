@@ -1,39 +1,36 @@
 #+STARTUP: showall
-* 🌟 Schedule [70%] 
-  - [X]  unknown 1.two-sum.py
-  - [X]  unknown 3.Longest-Substring-Without-Repeating-Characters.py
+* 🌟 Schedule [75%] 
+  - [X]     Easy 1.two-sum.py
+  - [X]   Medium 3.longest-substring-without-repeating-characters.py
   - [ ]     Hard 4.median-of-two-sorted-arrays.py
-  - [X]  unknown 24.Swap-Nodes-in-Pairs.py
+  - [X]   Medium 24.swap-nodes-in-pairs.py
   - [X]   Medium 33.search-in-rotated-sorted-array.py
   - [ ]   Medium 34.find-first-and-last-position-of-element-in-sorted-array.py
-  - [X]  unknown 45.jump-game.py
+  - [X]   Medium 45.jump-game-ii.py
   - [ ]     Hard 51.n-queens.py
   - [X]     Easy 53.maximum-subarray.py
-  - [ ]  unknown 61.Rotate-List.py
-  - [ ]  unknown 70.Climbing-Stairs.py
   - [ ]   Medium 82.remove-duplicates-from-sorted-list-ii.py
   - [ ]   Medium 102.binary-tree-level-order-traversal.py
   - [ ]   Medium 103.binary-tree-zigzag-level-order-traversal.py
   - [X]     Easy 121.best-time-to-buy-and-sell-stock.py
   - [X]   Medium 143.reorder-list.py
-  - [X]  unknown 179.Largest-Number.py
+  - [X]   Medium 179.largest-number.py
   - [X]     Easy 189.rotate-array.py
-  - [X]  unknown 198.House-Robber.py
+  - [X]   Medium 198.house-robber.py
   - [X]   Medium 300.longest-increasing-subsequence.py
-  - [X]  unknown 560.Subarray-Sum-Equals-K.py
-  - [X]  unknown 765.Couples-Holding-Hands.py
-  - [X]  unknown 862.Shortest-Subarray-with-Sum-at-Least-K.py
-  - [X]  unknown 1005.Maximize-Sum-Of-Array-After-K-Negations.py
+  - [X]   Medium 560.subarray-sum-equals-k.py
+  - [X]     Hard 765.couples-holding-hands.py
+  - [X]     Hard 862.shortest-subarray-with-sum-at-least-k.py
+  - [X]     Easy 1005.maximize-sum-of-array-after-k-negations.py
+  - [X]     Easy 1013.partition-array-into-three-parts-with-equal-sum.py
+  - [X]   Medium 1015.smallest-integer-divisible-by-k.py
   - [X]   Medium 1017.Convert-to-Base--2.py
   - [X]   Medium 1019.Next-Greater-Node-In-Linked-List.py
   - [X]   Medium 1020.Number-of-Enclaves.py
-  - [X]  unknown 1020.Partition-Array-Into-Three-Parts-With-Equal-Sum.py
-  - [X]  unknown 1022.Smallest-Integer-Divisible-by-K.py
-  - [ ]  unknown 1041.Robot-Bounded-In-Circle.py 
+  - [ ]   Medium 1041.Robot-Bounded-In-Circle.py 
 
 * 🪐 Total
-  -      All Total:   30 Done:   21
-  -  unknown Total:   15 Done:   12
-  -     Hard Total:    2 Done:    0
-  -   Medium Total:   10 Done:    6
-  -     Easy Total:    3 Done:    3
+  -      All Total:   28 Done:   21
+  -     Easy Total:    6 Done:    6
+  -   Medium Total:   18 Done:   13
+  -     Hard Total:    4 Done:    2

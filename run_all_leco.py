@@ -1,12 +1,9 @@
-from os import listdir, walk
-from subprocess import Popen, PIPE, STDOUT
-from os.path import isfile, join
-import re
-
 import subprocess
+import re
+from os import walk
 
 
-def getDifficulty(name):
+def get_difficulty(name):
 
     fs = open("./leco-source/" + name, "r")
 
@@ -43,7 +40,7 @@ def main():
     difficulty_map = {}
 
     for t in f:
-        difficulty = getDifficulty(t)
+        difficulty = get_difficulty(t)
         if difficulty not in difficulty_map:
             difficulty_map[difficulty] = [0, 1]
         else:
@@ -60,24 +57,31 @@ def main():
             if return_code == 0:
                 difficulty_map[difficulty][0] += 1
                 counter += 1
-        except:
+        except Exception:
             outputStr += line(t, difficulty, 1)
-
-    outputStr = "#+STARTUP: showall\n* 🌟 Schedule [%s%%] %s \n\n* 🪐 Total\n  - %s Total: %s Done: %s" % (
+    outputStr = (
+        "#+STARTUP: showall\n* 🌟 Schedule [%s%%] %s \n\n* 🪐 Total"
+        "\n  - %s Total: %s Done: %s"
+    ) % (
         int(counter * 100 / len(f)),
         outputStr,
         "All".rjust(8, " "),
         str(len(f)).rjust(4, " "),
-        str(counter).rjust(4, " ")
+        str(counter).rjust(4, " "),
     )
 
     for key, (d, a) in difficulty_map.items():
-        outputStr += "\n  - %s Total: %s Done: %s" % (key.rjust(8, " "), str(a).rjust(4, " "), str(d).rjust(4, " "))
+        outputStr += "\n  - %s Total: %s Done: %s" % (
+            key.rjust(8, " "),
+            str(a).rjust(4, " "),
+            str(d).rjust(4, " "),
+        )
 
     with open("./schedule.org", "w") as output:
         output.write(outputStr)
 
     print(outputStr)
+
 
 if __name__ == "__main__":
     main()

@@ -31,7 +31,7 @@ Link: https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 from typing import List
 import unittest
-from queue import Queue 
+from queue import Queue
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -39,6 +39,7 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     # 96ms 6%
@@ -66,23 +67,26 @@ class Solution:
         self._levels = []
         self.get_level(root, 0)
         return self._levels
-            
+
     def get_level(self, root, depth):
-        if(not root):
+        if not root:
             return
-        if(depth == len(self._levels)):
+        if depth == len(self._levels):
             self._levels.append([])
-        self._levels[depth].append(root.val)
+        if root.val != None:
+            self._levels[depth].append(root.val)
         self.get_level(root.left, depth + 1)
         self.get_level(root.right, depth + 1)
+
 
 # comment:
 # Use BFS.
 # Iteration way requires more cache and codes to handle it.
-# Recursion way can be easier to read and less code for cached. 
+# Recursion way can be easier to read and less code for cached.
+
 
 class SolutionCase(unittest.TestCase):
-    def buildTree(self, arr: List, idx: int=0) -> TreeNode:
+    def buildTree(self, arr: List, idx: int = 0) -> TreeNode:
         if idx >= len(arr):
             return None
         root = TreeNode(arr[idx])
@@ -93,15 +97,17 @@ class SolutionCase(unittest.TestCase):
     def test_level_order(self):
         s = Solution()
         for i, o in [
-                ([3,9,20, None, None, 15,7], [[3],[9,20], [15,7]]),
-                ([1,2], [[1], [2]]),
-                ([1,2,None,3,None,4,None,5], [[1],[2],[3, 4],[5]]),
-                ([0,2,4,1,None,3,-1,5,1,None,6,None,8], [[0],[2,4],[1,3,-1],[5,1,6,8]])
+            ([3, 9, 20, None, None, 15, 7], [[3], [9, 20], [15, 7]]),
+            ([1, 2], [[1], [2]]),
+            ([1, 2, None, 3, None, 4, None, 5], [[1], [2], [3, 4], [5]]),
+            (
+                [0, 2, 4, 1, None, 3, -1, 5, 1, None, 6, None, 8],
+                [[0], [2, 4], [1, 3, -1], [5, 1, 6, 8]],
+            ),
         ]:
             self.assertEqual(s.levelOrder(self.buildTree(i)), o)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = Solution()
     unittest.main()
-    

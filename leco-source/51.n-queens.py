@@ -37,21 +37,66 @@ Link: https://leetcode.com/problems/n-queens/
 """
 
 from typing import List
+import collections
 import unittest
+
 
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
-        
+        self.ban_row = [False] * n
+        self.ban_right_down = collections.defaultdict(bool)
+        self.ban_left_down = collections.defaultdict(bool)
+        self.cur_board = [["."] * n for _ in range(n)]
+        self.sols = []
 
+        def get_format(board):
+            return ["".join(line) for line in board]
+
+        def dfs(y, mark):
+            if mark == n:
+                self.sols.append(get_format(self.cur_board))
+            elif y >= n:
+                return
+            else:
+                for x in range(n):
+                    if not (
+                            self.ban_row[x]
+                            or self.ban_right_down[x - y]
+                            or self.ban_left_down[x + y]
+                    ):
+                        self.ban_row[x] = self.ban_right_down[
+                            x - y
+                        ] = self.ban_left_down[
+                            x + y
+                        ] = True
+                        self.cur_board[y][x] = "Q"
+                        dfs(y + 1, mark + 1)
+                        self.ban_row[x] = self.ban_right_down[
+                            x - y
+                        ] = self.ban_left_down[
+                            x + y
+                        ] = False
+                        self.cur_board[y][x] = "."
+
+        dfs(0, 0)
+        return self.sols
 
 class SolutionCase(unittest.TestCase):
     def test_solve_n_queens(self):
         s = Solution()
-        for i, o in []:
+        for i, o in [
+            (1, [["Q"]]),
+            (
+                4,
+                [
+                    [".Q..", "...Q", "Q...", "..Q."],
+                    ["..Q.", "Q...", "...Q", ".Q.."],
+                ],
+            ),
+        ]:
             self.assertEqual(s.solveNQueens(i), o)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = Solution()
     unittest.main()
-    

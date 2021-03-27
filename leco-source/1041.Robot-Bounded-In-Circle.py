@@ -46,30 +46,36 @@ instructions[i] is in {'G', 'L', 'R'}
 
 import unittest
 
+
 class Solution:
     def isRobotBounded(self, instructions: str) -> bool:
-        if "G" not in instructions:
-            return True
-        sum_rotate = 0
+        dirs = [(0, 1), (-1, 0), (0, -1), (1, 0)]
+
+        cur = [(0, 0), 0]
+
         for i in instructions:
-            if i == "L":
-                sum_rotate += 90
-            elif i == "R":
-                sum_rotate -= 90
-        return sum_rotate % 360 != 0
-    
+            if i == "G":
+                cur[0] = tuple([x + y for x, y in zip(cur[0], dirs[cur[1]])])
+            elif i == "L":
+                cur[1] = (cur[1] + 1) % len(dirs)
+            else:
+                cur[1] = (cur[1] + len(dirs) - 1) % len(dirs)
+        return cur[0] == (0, 0) or cur[1] != 0
+
+
 class RobotBoundedInCircleCase(unittest.TestCase):
     def test_robot_bounded_in_circle(self):
         s = Solution()
-        for i, o in [("GLRLLGLL", True),
-                     ("GLGLGGLGL", False),
-                     ("GGLLGG", True),
-                     ("GG", False),
-                ("GL", True)]:
+        for i, o in [
+            ("GLRLLGLL", True),
+            ("GLGLGGLGL", False),
+            ("GGLLGG", True),
+            ("GG", False),
+            ("GL", True),
+        ]:
             self.assertEqual(s.isRobotBounded(i), o)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = Solution()
     unittest.main()
-

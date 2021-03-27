@@ -27,37 +27,59 @@ Link: https://leetcode.com/problems/find-first-and-last-position-of-element-in-s
 from typing import List
 import unittest
 
-class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
-        left, right = 0, len(nums) - 1
-        flag = False
-        while left < right and not flag:
-            mid = (right + left) // 2
-            if nums[mid] > target:
-                right = mid
-            elif nums[mid] < target:
-                left = mid
-            else:
-                flag = True
-                left = right = mid
-        if not flag:
-            return [-1, -1]
-        left_end  = right_end = mid
-        
-                
 
+class Solution:
+    def first_occurance(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        while low<=high:
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                if mid-1>=0 and nums[mid-1]==target:
+                    high = mid-1
+                else:
+                    return mid
+            elif nums[mid]>target:
+                high=mid-1
+            else:
+                low = mid+1
+        return -1
+    
+    def last_occurance(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        while low<=high:
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                if mid+1<len(nums) and nums[mid+1]==target:
+                    low = mid+1
+                else:
+                    return mid
+            elif nums[mid]>target:
+                high=mid-1
+            else:
+                low = mid+1
+        return -1
+    
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        if not nums:
+            return [-1,-1]
+        return [self.first_occurance(nums,target),self.last_occurance(nums,target)]
 
 class SolutionCase(unittest.TestCase):
     def test_search_range(self):
         s = Solution()
         for i, o in [
-                ([[5,7,7,8,8,10], 8], [3,4])
-                ([[5,7,7,8,8,10], 6], [-1,-1])
+            ([[[1, 2, 3], 1], [0, 0]]),
+            ([[[1, 2], 2], [1, 1]]),
+            ([[[2, 2], 2], [0, 1]]),
+            ([[[1], 1], [0, 0]]),
+            ([[5, 7, 7, 8, 8, 10], 8], [3, 4]),
+            ([[5, 7, 7, 8, 8, 10], 6], [-1, -1]),
         ]:
             self.assertEqual(s.searchRange(*i), o)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = Solution()
     unittest.main()
-    

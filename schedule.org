@@ -1,17 +1,17 @@
 #+STARTUP: showall
-* 🌟 Schedule [75%] 
+* 🌟 Schedule [100%] 
   - [X]     Easy 1.two-sum.py
   - [X]   Medium 3.longest-substring-without-repeating-characters.py
-  - [ ]     Hard 4.median-of-two-sorted-arrays.py
+  - [X]     Hard 4.median-of-two-sorted-arrays.py
   - [X]   Medium 24.swap-nodes-in-pairs.py
   - [X]   Medium 33.search-in-rotated-sorted-array.py
-  - [ ]   Medium 34.find-first-and-last-position-of-element-in-sorted-array.py
+  - [X]   Medium 34.find-first-and-last-position-of-element-in-sorted-array.py
   - [X]   Medium 45.jump-game-ii.py
-  - [ ]     Hard 51.n-queens.py
+  - [X]     Hard 51.n-queens.py
   - [X]     Easy 53.maximum-subarray.py
-  - [ ]   Medium 82.remove-duplicates-from-sorted-list-ii.py
-  - [ ]   Medium 102.binary-tree-level-order-traversal.py
-  - [ ]   Medium 103.binary-tree-zigzag-level-order-traversal.py
+  - [X]   Medium 82.remove-duplicates-from-sorted-list-ii.py
+  - [X]   Medium 102.binary-tree-level-order-traversal.py
+  - [X]   Medium 103.binary-tree-zigzag-level-order-traversal.py
   - [X]     Easy 121.best-time-to-buy-and-sell-stock.py
   - [X]   Medium 143.reorder-list.py
   - [X]   Medium 179.largest-number.py
@@ -27,10 +27,10 @@
   - [X]   Medium 1017.Convert-to-Base--2.py
   - [X]   Medium 1019.Next-Greater-Node-In-Linked-List.py
   - [X]   Medium 1020.Number-of-Enclaves.py
-  - [ ]   Medium 1041.Robot-Bounded-In-Circle.py 
+  - [X]   Medium 1041.Robot-Bounded-In-Circle.py 
 
 * 🪐 Total
-  -      All Total:   28 Done:   21
+  -      All Total:   28 Done:   28
   -     Easy Total:    6 Done:    6
-  -   Medium Total:   18 Done:   13
-  -     Hard Total:    4 Done:    2
+  -   Medium Total:   18 Done:   18
+  -     Hard Total:    4 Done:    4

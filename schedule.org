@@ -9,6 +9,7 @@
   - [X]   Medium 45.jump-game-ii.py
   - [X]     Hard 51.n-queens.py
   - [X]     Easy 53.maximum-subarray.py
+  - [X]     Easy 70.climbing-stairs.py
   - [X]   Medium 82.remove-duplicates-from-sorted-list-ii.py
   - [X]   Medium 102.binary-tree-level-order-traversal.py
   - [X]   Medium 103.binary-tree-zigzag-level-order-traversal.py
@@ -21,6 +22,7 @@
   - [X]   Medium 560.subarray-sum-equals-k.py
   - [X]     Hard 765.couples-holding-hands.py
   - [X]     Hard 862.shortest-subarray-with-sum-at-least-k.py
+  - [X]   Medium 875.koko-eating-bananas.py
   - [X]     Easy 1005.maximize-sum-of-array-after-k-negations.py
   - [X]     Easy 1013.partition-array-into-three-parts-with-equal-sum.py
   - [X]   Medium 1015.smallest-integer-divisible-by-k.py
@@ -30,7 +32,7 @@
   - [X]   Medium 1041.Robot-Bounded-In-Circle.py 
 
 * 🪐 Total
-  -      All Total:   28 Done:   28
-  -     Easy Total:    6 Done:    6
-  -   Medium Total:   18 Done:   18
+  -      All Total:   30 Done:   30
+  -     Easy Total:    7 Done:    7
+  -   Medium Total:   19 Done:   19
   -     Hard Total:    4 Done:    4

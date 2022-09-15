@@ -1,9 +1,10 @@
 #+STARTUP: showall
 * 🌟 Schedule [100%] 
   - [X]     Easy 1.two-sum.py
-  - [X]   Medium 3.longest-substring-without-repeating-characters.py
+  - [X]   Medium 3.Longest-Substring-Without-Repeating-Characters.py
   - [X]     Hard 4.median-of-two-sorted-arrays.py
-  - [X]   Medium 24.swap-nodes-in-pairs.py
+  - [X]   Medium 5.longest-palindromic-substring.py
+  - [X]   Medium 24.Swap-Nodes-in-Pairs.py
   - [X]   Medium 33.search-in-rotated-sorted-array.py
   - [X]   Medium 34.find-first-and-last-position-of-element-in-sorted-array.py
   - [X]   Medium 45.jump-game-ii.py
@@ -15,24 +16,26 @@
   - [X]   Medium 103.binary-tree-zigzag-level-order-traversal.py
   - [X]     Easy 121.best-time-to-buy-and-sell-stock.py
   - [X]   Medium 143.reorder-list.py
-  - [X]   Medium 179.largest-number.py
+  - [X]   Medium 179.Largest-Number.py
   - [X]     Easy 189.rotate-array.py
-  - [X]   Medium 198.house-robber.py
+  - [X]   Medium 198.House-Robber.py
   - [X]   Medium 300.longest-increasing-subsequence.py
-  - [X]   Medium 560.subarray-sum-equals-k.py
-  - [X]     Hard 765.couples-holding-hands.py
-  - [X]     Hard 862.shortest-subarray-with-sum-at-least-k.py
+  - [X]   Medium 560.Subarray-Sum-Equals-K.py
+  - [X]     Hard 765.Couples-Holding-Hands.py
+  - [X]     Hard 862.Shortest-Subarray-with-Sum-at-Least-K.py
   - [X]   Medium 875.koko-eating-bananas.py
-  - [X]     Easy 1005.maximize-sum-of-array-after-k-negations.py
+  - [X]   Medium 898.bitwise-ors-of-subarrays.py
+  - [X]     Easy 1005.Maximize-Sum-Of-Array-After-K-Negations.py
   - [X]     Easy 1013.partition-array-into-three-parts-with-equal-sum.py
   - [X]   Medium 1015.smallest-integer-divisible-by-k.py
   - [X]   Medium 1017.Convert-to-Base--2.py
   - [X]   Medium 1019.Next-Greater-Node-In-Linked-List.py
   - [X]   Medium 1020.Number-of-Enclaves.py
-  - [X]   Medium 1041.Robot-Bounded-In-Circle.py 
+  - [X]   Medium 1041.Robot-Bounded-In-Circle.py
+  - [X]     Easy 1128.number-of-equivalent-domino-pairs.py 
 
 * 🪐 Total
-  -      All Total:   30 Done:   30
-  -     Easy Total:    7 Done:    7
-  -   Medium Total:   19 Done:   19
+  -      All Total:   33 Done:   33
+  -     Easy Total:    8 Done:    8
+  -   Medium Total:   21 Done:   21
   -     Hard Total:    4 Done:    4

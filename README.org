@@ -1,5 +1,12 @@
 #+STARTUP: showall
-* 🌟 Schedule [100%] 
+* Leetcode Solutions
+
+** Usage
+#+begin_src bash
+  python -m leco -h
+  python -m leco -q 3249
+#+end_src
+** 🌟 Schedule [100%] 
   - [X]     Easy 1.two-sum.py
   - [X]   Medium 3.Longest-Substring-Without-Repeating-Characters.py
   - [X]     Hard 4.median-of-two-sorted-arrays.py
@@ -32,10 +39,12 @@
   - [X]   Medium 1019.Next-Greater-Node-In-Linked-List.py
   - [X]   Medium 1020.Number-of-Enclaves.py
   - [X]   Medium 1041.Robot-Bounded-In-Circle.py
-  - [X]     Easy 1128.number-of-equivalent-domino-pairs.py 
+  - [X]     Easy 1128.number-of-equivalent-domino-pairs.py
+  - [X]   Medium 3249.count-the-number-of-good-nodes.py
 
-* 🪐 Total
-  -      All Total:   33 Done:   33
+
+** 🪐 Total
+  -      All Total:   34 Done:   34
   -     Easy Total:    8 Done:    8
-  -   Medium Total:   21 Done:   21
+  -   Medium Total:   22 Done:   22
   -     Hard Total:    4 Done:    4

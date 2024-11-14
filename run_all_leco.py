@@ -60,8 +60,19 @@ def main():
         except Exception:
             outputStr += line(t, difficulty, 1)
     outputStr = (
-        "#+STARTUP: showall\n* 🌟 Schedule [%s%%] %s \n\n* 🪐 Total"
-        "\n  - %s Total: %s Done: %s"
+        """#+STARTUP: showall
+* Leetcode Solutions
+
+** Usage
+#+begin_src bash
+  python -m leco -h
+  python -m leco -q 3249
+#+end_src
+** 🌟 Schedule [%s%%] %s
+
+
+** 🪐 Total
+  - %s Total: %s Done: %s"""
     ) % (
         int(counter * 100 / len(f)),
         outputStr,
@@ -77,7 +88,7 @@ def main():
             str(d).rjust(4, " "),
         )
 
-    with open("./schedule.org", "w") as output:
+    with open("./README.org", "w") as output:
         output.write(outputStr)
 
     print(outputStr)
